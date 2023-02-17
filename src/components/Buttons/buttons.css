@@ -1,0 +1,14 @@
+.buttons-wrap{
+    width: 100%;
+    padding-top: 30px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.cansel, .delete{
+    background: #d18250 !important;
+    border: none;
+}
+.cansel:hover, .delete:hover{
+    background: #f88134 !important;
+}

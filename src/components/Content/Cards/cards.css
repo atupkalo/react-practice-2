@@ -1,0 +1,18 @@
+.card-custom{
+    padding: 10px;
+    margin-bottom: 30px;
+}
+.card-inner-wrap{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+.card-title-custom{
+    font-size: 1.3rem;
+    color: #253343;
+}
+.card-text-custom{
+    font-size: 1rem;
+    color: #616161;
+    padding-right: 10px;
+}

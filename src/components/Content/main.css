@@ -1,0 +1,32 @@
+.main{
+    padding: 30px 0 50px 0;
+}
+.container{
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: 10px;
+}
+.main-form{
+    grid-column: 1/4;
+}
+.lists-box{
+    grid-column: 4/13;
+}
+.lists-box{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+}
+.togo, .done{
+    text-align: center;
+    width: 50%;
+    padding: 0 30px;
+}
+.done-title, .togo-title{
+    font-size: 1.8rem;
+    color: #434343;
+    margin-bottom: 20px;
+}
+.card-done{
+    background: #d0fae3;
+}

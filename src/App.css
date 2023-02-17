@@ -4,3 +4,11 @@
     background-position: center;
     text-align: center;
 }
+.btn-width{
+    width: 100%!important;
+    background: #589eab;
+    border: none;
+}
+.btn-width:hover{
+    background: #2c8bab!important;
+}

@@ -45,9 +45,10 @@ class ToGo extends React.Component{
            if(index == e.target.id){
                obj.reqClass = 'card-done'
                this.state.placesListPassed.push(obj)
+               delete this.state.placesListActive[index]
            }
        })
-        console.log(this.state.placesListPassed)
+        console.log(this.state.placesListActive)
     }
     render(){
         return (

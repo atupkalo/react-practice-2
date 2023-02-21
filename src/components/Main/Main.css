@@ -1,0 +1,66 @@
+.main {
+  padding: 30px 0 50px 0;
+  min-height: 100%;
+}
+.container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 16px;
+}
+.main-form {
+  width: 40%;
+}
+.togo {
+  text-align: center;
+  width: 58%;
+}
+.togo-title {
+  font-size: 1.8rem;
+  color: #434343;
+  margin-bottom: 20px;
+}
+.card-done {
+  background: #d0fae3;
+}
+
+.main-form {
+  padding: 12px;
+  border: 1px solid #ccc;
+}
+
+/*  //////////////////////////////////////////////// Cards */
+.card-custom {
+  position: relative;
+  padding: 10px;
+  margin-bottom: 30px;
+  overflow: hidden;
+}
+.visited {
+  padding: 30px 10px 10px 10px !important;
+}
+.visited:before {
+  content: "Visited";
+  color: #ffffff;
+  position: absolute;
+  top: 0;
+  right: -3px;
+  width: 104%;
+  height: 24px;
+  background: #108c4e;
+}
+.card-inner-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.card-title-custom {
+  font-size: 1.3rem;
+  color: #253343;
+}
+.card-text-custom {
+  font-size: 1rem;
+  color: #616161;
+  padding-right: 10px;
+}

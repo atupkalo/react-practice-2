@@ -7,7 +7,7 @@ class Buttons extends React.Component {
       <div className="buttons-wrap">
         <button
           id={this.props.id}
-          name="dlete"
+          name="delete"
           className={"btn btn-primary delete"}
           onClick={this.props.clickHandler}
         >
@@ -19,7 +19,7 @@ class Buttons extends React.Component {
           className={"btn btn-primary"}
           onClick={this.props.clickHandler}
         >
-          Marke as done
+          Mark as done
         </button>
       </div>
     );

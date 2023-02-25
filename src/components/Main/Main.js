@@ -11,36 +11,41 @@ class Main extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      allplaces: [{ empty: "No listed places to go yet, please add a trip" }],
+      allPlacesList: [],
+      flag: false
     };
-    this.allPlacesList = [];
-    this.stateFiltered = [];
-    this.stateBoolModified = [];
+    this.allPlacesListSnap = []
   }
 
   handleCallback = (childData) => {
-    this.allPlacesList.push(childData);
-    this.setState({ allplaces: this.allPlacesList });
+    this.allPlacesListSnap.push(childData);
+    this.setStateHandler(this.allPlacesListSnap);
   };
   btnClickHandler = (e) => {
-    e.preventDefault();
     const id = Number(e.target.id);
 
-    if (e.target.name === "done") {
-      this.stateBoolModified = this.state.allplaces;
-      for (let i = 0; i < this.stateBoolModified.length; i++) {
-        if (i == id) {
-          this.stateBoolModified[i].bool = 1;
+    if(e.target.name === 'delete'){
+      this.placesDeleteHandler(id);
+    }else{
+      for (let i = 0; i < this.allPlacesListSnap.length; i++) {
+        if(i === id){
+          this.allPlacesListSnap[i].bool = true;
         }
       }
-      this.setState({ allplaces: this.stateBoolModified });
-    } else {
-      this.stateFiltered = this.state.allplaces.filter((elem, i) => {
-        return i !== id;
-      });
-      this.setState({ allplaces: this.stateFiltered });
+      this.setStateHandler(this.allPlacesListSnap);
     }
+    e.preventDefault();
   };
+
+  placesDeleteHandler = (id) =>{
+    this.allPlacesListSnap = this.allPlacesListSnap.filter((el, i) => {
+      return i !== id;
+    });
+    this.setStateHandler(this.allPlacesListSnap);
+  }
+  setStateHandler = (arr) => {
+    this.setState({ allPlacesList: arr });
+  }
 
   render() {
     return (
@@ -49,10 +54,8 @@ class Main extends React.Component {
           <Form passingFormData={this.handleCallback} />
           <div className={"togo"}>
             <div className="togo-title">Planned</div>
-            {this.state.allplaces.map((elem, i) => {
-              return elem.empty ? (
-                <div>{elem.empty}</div>
-              ) : (
+            {this.state.allPlacesList.map((elem, i) => {
+              return (
                 <Card
                   class={elem.bool && "visited"}
                   key={i}

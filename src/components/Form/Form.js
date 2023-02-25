@@ -5,7 +5,7 @@ class Form extends React.Component {
     const formData = {};
     formData.place = event.target[0].value;
     formData.date = event.target[1].value;
-    formData.bool = 0;
+    formData.bool = false;
     this.props.passingFormData(formData);
     event.preventDefault();
   };
